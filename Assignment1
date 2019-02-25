@@ -1,0 +1,24 @@
+ # Sum of elements in vector
+ vector_sum = sum(vector)    
+ 
+ #number of elements in vector
+ vector_length = length(vector)
+ 
+ #Average System load
+ system_load = vector_sum/vector_length
+ 
+ jobs_in_service = sum(vector>0)
+ queue_length = vector_sum - jobs_in_service
+ #Average Queue load
+ queue_load = queue_length / vector_length
+ 
+ #Average Server load
+ service_load = jobs_in_service / vector_length
+ 
+ #plotting the vector
+ plot(vector, type = "S", xlim = c(0,18), xlab = "Time", ylab = "Total Number of Jobs in System", panel.first = grid())
+ 
+ #printing Final Results 
+ system_load
+ queue_load
+ service_load
